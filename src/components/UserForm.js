@@ -1,10 +1,17 @@
 import React from "react";
+import { useState } from "react";
 
 const UserForm = () => {
+  const [user, setUser] = useState({});
   const handleOnchange = (e) => {
     const { name, value } = e.target;
     console.log(name, value);
+    setUser({
+      ...user,
+      [name]: value,
+    });
   };
+  console.log(user);
   return (
     <div className="w-50 shadow-lg p-3 m-auto mt-5 rounded">
       <form action="">
